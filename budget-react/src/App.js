@@ -7,6 +7,15 @@ function App() {
   const [income, setIncome] = useState([]);
   const [totalIncome, setTotalIncome] = useState(0);
 
+  //only calls this function when income parameter changes
+  useEffect(() => {
+    let temp = 0;
+    for(let i = 0; i < income.length; i++) {
+      temp += parseInt(income[i].price);
+    }
+
+    setTotalIncome(temp);
+  }, [income]);
 
 
   return (
@@ -14,7 +23,7 @@ function App() {
       <Header totalIncome = {totalIncome} />
       <IncomeForm income={income} setIncome={setIncome}/>
 
-      {(income.length > 0) ? income[0].desc : ''}
+
     </div>
   );
 }
