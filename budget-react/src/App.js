@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import Header from './components/Header';
+import IncomeForm from './components/incomeForm';
 
 function App() {
 
@@ -11,6 +12,9 @@ function App() {
   return (
     <div className="App">
       <Header totalIncome = {totalIncome} />
+      <IncomeForm income={income} setIncome={setIncome}/>
+
+      {(income.length > 0) ? income[0].desc : ''}
     </div>
   );
 }
