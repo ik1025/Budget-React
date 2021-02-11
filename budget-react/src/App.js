@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import Header from './components/Header';
 import IncomeForm from './components/incomeForm';
 import IncomeList from './components/IncomeList';
+import IncomeItem from './components/IncomeItem';
 
 function App() {
 
